@@ -3,7 +3,15 @@ import Home from "./Components/Home.js";
 import About from "./Components/About.js";
 import Nav from "./Components/Nav/nav.js";
 import SignIn from "./Components/SignIn/signIn.js";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Vote from "./Components/Vote/VoteParent.js";
+import Voter from "./Components/Vote/voter.js";
+import Create from "./Components/CreateForm/create.js";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 
 const App = () => {
   return (
@@ -14,6 +22,9 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
           <Route path="/SignIn" exact component={SignIn} />
+          <Route path="/create" exact component={Create} />
+          <Route path="/Vote" exact component={Vote} />
+          <Route path="/voter/:name" exact component={Voter} />
         </Switch>
       </div>
     </Router>
