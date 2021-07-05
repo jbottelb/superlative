@@ -1,5 +1,9 @@
 import React from "react";
-import { withRouter } from "react-router-dom"; // <--- import `withRouter`. We will use this in the bottom of our file.
+import { withRouter } from "react-router-dom";
+
+/*
+Need to be able to send the id to the vote page, after verifying access pw
+*/
 
 class VoterAuth extends React.Component {
   handleIdChange(e) {
