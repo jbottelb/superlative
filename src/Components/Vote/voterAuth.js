@@ -6,16 +6,13 @@ Need to be able to send the id to the vote page, after verifying access pw
 */
 
 class VoterAuth extends React.Component {
-  handleIdChange(e) {
+  handleChange(e) {
     this.setState({ id: e.target.value });
-  }
-  handlePasswordChange(e) {
-    this.setState({ password: e.target.value });
   }
 
   submitForm(e) {
     e.preventDefault();
-    this.props.history.push({ pathname: "/vote/:" + "name" });
+    this.props.history.push({ pathname: "/vote/" + "name" });
   }
 
   render() {

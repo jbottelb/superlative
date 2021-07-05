@@ -6,12 +6,17 @@ import SignIn from "./Components/SignIn/signIn.js";
 import Vote from "./Components/Vote/VoteParent.js";
 import Voter from "./Components/Vote/voter.js";
 import Create from "./Components/CreateForm/create.js";
+import Parse from "parse";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect
 } from "react-router-dom";
+import * as Env from "./environments.js";
+
+Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
+Parse.serverURL = Env.SERVER_URL;
 
 const App = () => {
   return (
