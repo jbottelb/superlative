@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/SignIn" exact component={SignIn} />
           <Route path="/create" exact component={Create} />
           <Route path="/Vote" exact component={Vote} />
-          <Route path="/voter/:name" exact component={Voter} />
+          <Route path="/voter/:id" exact component={Voter} />
         </Switch>
       </div>
     </Router>
