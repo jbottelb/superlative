@@ -4,19 +4,23 @@ import React from "react";
 const Home = () => {
   return (
     <div>
+      <h1> Project Status </h1>
       <p>
-        Home. Nothing important goes here. For now, it will be the project
-        staus. Right now, for feature 3, the database is hooked up and the
-        routing is configured. The create forms is functioning, needs
-        authentification to put it in its final form. But for now, the user just
-        enters their name for the form, and it is submitted. Routing works, and
-        the vote feature currently can direct to the right form.
+        Project status: Right now, for feature 4, the database is hooked up and
+        the routing is configured. The create forms is functioning, needs
+        authentification to put it in its final form. But it does create new
+        forms in the DB correctly. So far, this is the only example of correct
+        parse methods impliments. We have a get that works, but has not been put
+        in place yet. Routing works, and the vote feature currently can direct
+        to the right form.
       </p>
-      <br />
-      <p>
-        ### TODO ### for feature 4 to make that paragraph true: - build create
-        form - get routing to work to be able to display a voting form.
-      </p>
+      <h2>TODO</h2>
+      <ul>
+        <li>Add voting functionality</li>
+        <li>View a form from a Form name</li>
+        <li>Add styling</li>
+        <li>Authentification for creating forms</li>
+      </ul>
     </div>
   );
 };
