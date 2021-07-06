@@ -1,3 +1,7 @@
+# Superlative Voter
+
+## By Josh Bottelberghe and Macklin Freitag
+
 Basically, one person creates a voting form.
 They give it a name, and an access password. They
 also list a bunch of people that will be in the form.
@@ -9,7 +13,7 @@ The only person who uses authentification is the person who creates the form.
 
 The changelog states all features that are functional.
 
-## How we do on the feature 4 rubric:\
+## How we do on the feature 4 rubric:
 
 Submitted on time: yes\
 Formatting: yes (could use a couple more comments)\
@@ -25,7 +29,7 @@ UML: Yes (in public)
 
 Both the component Tree diagram and UML are in the public folder
 
-## DB: (this probably looks awful in md)\
+## DB: (this probably looks awful in md)
 
 Table users {\
 id int [pk, increment] // auto-increment\
