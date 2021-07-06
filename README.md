@@ -9,64 +9,61 @@ The only person who uses authentification is the person who creates the form.
 
 The changelog states all features that are functional.
 
-How we do on the feature 4 rubric:
-Submitted on time: yes
-Formatting: yes (could use a couple more comments)
-Formtting 2: yes (anything new need to be added to changelog)
-No Errors: no (some unused varables in scaffloding for next part)
-Webpack: yes
-Tree Diagram: yes (in public)
-Load Data: yes (voter form can be loaded from ID)
-Parse Initialized: yes
-Parse models in external folders: yes
-Rule of 10: Yes, forms are broken down into awards and candaidate
+How we do on the feature 4 rubric:\
+Submitted on time: yes\
+Formatting: yes (could use a couple more comments)\
+Formtting 2: yes (anything new need to be added to changelog)\
+No Errors: no (some unused varables in scaffloding for next part)\
+Webpack: yes\
+Tree Diagram: yes (in public)\
+Load Data: yes (voter form can be loaded from ID)\
+Parse Initialized: yes\
+Parse models in external folders: yes\
+Rule of 10: Yes, forms are broken down into awards and candaidate\
 UML: Yes (in public)
 
 Both the component Tree diagram and UML are in the public folder
 
-DB: (this probably looks awful in md)
-Table users {
-id int [pk, increment] // auto-increment
-username varchar
-password varchar
-email varchar
-created_at timestamp
-country_code int
+DB: (this probably looks awful in md)\
+Table users {\
+id int [pk, increment] // auto-increment\
+username varchar\
+password varchar\
+email varchar\
+created_at timestamp\
+country_code int\
 }
 
-Table form {
-// Creating tables
-Table users as U {
-id int [pk, increment] // auto-increment
-username varchar
-password varchar
-email varchar
-created_at timestamp
+Table form {\
+// Creating tables\
+Table users as U {\
+id int [pk, increment] // auto-increment\
+username varchar\
+password varchar\
+email varchar\
+created_at timestamp\
 }
 
-Table form {
-code int [pk]
-creator varchar
-GroupName varchar
-Password varchar
+Table form {\
+code int [pk]\
+creator varchar\
+GroupName varchar\
+Password varchar\
 }
 
-Table award {
-awardCode int [pk]
-formCode int
-title varchar
-candadites array
+Table award {\
+awardCode int [pk]\
+formCode int\
+title varchar\
+candadites array\
 }
 
-Table candidate {
-awardCode int
-name varchar
-votes int
-
+Table candidate {\
+awardCode int\
+name varchar\
+votes int\
 }
-// Creating references
-// You can also define relaionship separately
-// > many-to-one; < one-to-many; - one-to-one
-Ref: U.username < form.creator
-Ref: form.code < award.formCode
+
+Ref: U.username < form.creator\
+Ref: form.code < award.formCode\
 Ref: award.awardCode < candidate.awardCode
