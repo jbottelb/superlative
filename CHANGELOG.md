@@ -8,3 +8,4 @@ Update 7/5/21
 - Initialized Database with some data
 - Installed parsing, created parse functions
 - Create Form Functionality implimented
+- Form for voting created
