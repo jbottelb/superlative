@@ -27,7 +27,7 @@ const Voter = () => {
     setName(e.target.value);
   };
 
-  // post voting
+  // post voting (not yet implimented)
   const onSubmitHandler = (e) => {
     e.preventDefault();
     console.log(name);

@@ -9,9 +9,9 @@ class VoterAuth extends React.Component {
     this.setState({ [nam]: val });
   };
 
+  // redirecrs to voting page based off name of the group
   submitForm(e) {
     // some time we will verify the password first
-
     e.preventDefault();
     this.props.history.push({ pathname: "/voter/" + this.state.FormId });
   }
