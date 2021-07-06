@@ -27,9 +27,9 @@ const Voter = () => {
     setName(e.target.value);
   };
 
+  // post voting
   const onSubmitHandler = (e) => {
-    // Trigger add flag to create lesson and
-    // re-render list with new lesson
+    e.preventDefault();
     console.log("No errors");
 
     alert("Vote submitted");
@@ -53,9 +53,7 @@ const Voter = () => {
                     onChange={onChangeHandler}
                   >
                     {award.candidates.map((candidate) => (
-                      <option key={candidate.name} value={candidate.name}>
-                        {candidate.name}
-                      </option>
+                      <option value={candidate.name}>{candidate.name}</option>
                     ))}
                   </select>
                 </li>
