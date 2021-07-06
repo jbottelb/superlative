@@ -20,7 +20,7 @@ class VoterAuth extends React.Component {
     return (
       <form onSubmit={this.submitForm.bind(this)}>
         <label>
-          Form ID (Try "Test2" for testing):
+          GroupName (Try "Test2" for testing):
           <input type="text" name="FormId" onChange={this.myChangeHandler} />
         </label>
         <label>
