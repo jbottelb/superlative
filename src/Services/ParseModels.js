@@ -7,7 +7,7 @@ export const createForm = (GroupName, password, candidates, data, creator) => {
   const myNewObject = new Parse.Object("From");
   myNewObject.set("GroupName", GroupName);
   myNewObject.set("Password", password);
-  myNewObject.set("Candidates", candidates);
+  myNewObject.set("candidates", candidates);
   myNewObject.set("data", data);
   myNewObject.set("Creator", creator);
   try {
