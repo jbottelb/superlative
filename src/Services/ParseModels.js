@@ -44,3 +44,12 @@ export const GetForm = (GroupID) => {
   }
   return results;
 };
+
+export const getById = (id) => {
+  const Lesson = Parse.Object.extend("Lesson");
+  const query = new Parse.Query(Lesson);
+  return query.get(id).then((result) => {
+    // return Lesson object with objectId: id
+    return result;
+  });
+};

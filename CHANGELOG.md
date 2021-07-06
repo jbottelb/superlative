@@ -7,3 +7,4 @@ Update 7/5/21
 - Created site template
 - Initialized Database with some data
 - Installed parsing, created parse functions
+- Create Form Functionality implimented

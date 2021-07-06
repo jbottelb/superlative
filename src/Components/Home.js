@@ -1,6 +1,6 @@
 import React from "react";
 
-// A homepage. Unsure of what it will be used for.
+// Home sweet home
 const Home = () => {
   return (
     <div>
@@ -10,9 +10,10 @@ const Home = () => {
         the routing is configured. The create forms is functioning, needs
         authentification to put it in its final form. But it does create new
         forms in the DB correctly. So far, this is the only example of correct
-        parse methods impliments. We have a get that works, but has not been put
-        in place yet. Routing works, and the vote feature currently can direct
-        to the right form.
+        parse methods impliments. Routing works, and the vote feature currently
+        can direct to the right form. There is a get call which calls the db to
+        displau a form based on an id. Voting does not work but the
+        requireemnests for feature 4 on this have been filled.
       </p>
       <h2>TODO</h2>
       <ul>
@@ -20,6 +21,8 @@ const Home = () => {
         <li>View a form from a Form name</li>
         <li>Add styling</li>
         <li>Authentification for creating forms</li>
+        <li>Make home page an acutal home page, not a todo</li>
+        <li>Write an about page</li>
       </ul>
     </div>
   );
