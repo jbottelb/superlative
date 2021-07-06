@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createForm } from "../../Services/ParseModels.js";
 
+// Creates html form to create Voting Form
 class CreateForm extends React.Component {
   constructor(props) {
     super(props);

@@ -7,6 +7,8 @@ they are recorded as having voted to prevent anyone from voting again.
 
 The only person who uses authentification is the person who creates the form.
 
+The changelog states all features that are functional.
+
 Both the component Tree diagram and UML are in the public folder
 
 DB: (this probably looks awful in md)

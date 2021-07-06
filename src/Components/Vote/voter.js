@@ -31,10 +31,11 @@ const Voter = () => {
     // Trigger add flag to create lesson and
     // re-render list with new lesson
     console.log("No errors");
+
+    alert("Vote submitted");
   };
 
-  // there was an error doing this idk
-  // <Award name={award.award} options={award.candidates} />
+  // For some reason, it needs a key and IDK why
 
   return (
     <div>
@@ -52,7 +53,7 @@ const Voter = () => {
                     onChange={onChangeHandler}
                   >
                     {award.candidates.map((candidate) => (
-                      <option value={candidate.name} key={candidate.name}>
+                      <option key={candidate.name} value={candidate.name}>
                         {candidate.name}
                       </option>
                     ))}
