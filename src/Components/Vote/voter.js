@@ -39,7 +39,7 @@ const Voter = () => {
 
   return (
     <div>
-      <form id="vote">
+      <form id="vote" onSubmit={onSubmitHandler}>
         {forms.length > 0 &&
           forms[0].toJSON().data.map((award) => (
             <div>
@@ -62,7 +62,7 @@ const Voter = () => {
               </span>
             </div>
           ))}
-        <input type="submit" onSubmit={onSubmitHandler} />
+        <input type="submit" />
       </form>
     </div>
   );
