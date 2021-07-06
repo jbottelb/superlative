@@ -2,6 +2,22 @@ import Parse from "parse";
 
 // contains database functions
 
+//create a form
+export const createForm = (GroupName, password, data, creator) => {
+  const myNewObject = new Parse.Object("From");
+  myNewObject.set("GroupName", GroupName);
+  myNewObject.set("Password", password);
+  myNewObject.set("data", data);
+  myNewObject.set("Creator", creator);
+  try {
+    const result = myNewObject.save();
+    // Access the Parse Object attributes using the .GET method
+    console.log("From created", result);
+  } catch (error) {
+    console.error("Error while creating From: ", error);
+  }
+};
+
 // get all froms by a groupID
 export const GetForm = (GroupID) => {
   const From = Parse.Object.extend("From");

@@ -4,7 +4,7 @@ import React from "react";
 // Note: this will be different after authentification
 // It will require the user to sign in. For now, the name is just entered
 const Create = () => {
-  return <p>Create Form</p>;
+  return <h1>Create Form</h1>;
 };
 
 export default Create;
