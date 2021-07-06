@@ -9,6 +9,19 @@ The only person who uses authentification is the person who creates the form.
 
 The changelog states all features that are functional.
 
+How we do on the feature 4 rubric:
+Submitted on time: yes
+Formatting: yes (could use a couple more comments)
+Formtting 2: yes (anything new need to be added to changelog)
+No Errors: no (some unused varables in scaffloding for next part)
+Webpack: yes
+Tree Diagram: yes (in public)
+Load Data: yes (voter form can be loaded from ID)
+Parse Initialized: yes
+Parse models in external folders: yes
+Rule of 10: Yes, forms are broken down into awards and candaidate
+UML: Yes (in public)
+
 Both the component Tree diagram and UML are in the public folder
 
 DB: (this probably looks awful in md)
