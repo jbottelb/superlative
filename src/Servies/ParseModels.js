@@ -1,5 +1,7 @@
 import Parse from "parse";
 
+// contains database functions
+
 // get all froms by a groupID
 export const GetForm = (GroupID) => {
   const From = Parse.Object.extend("From");

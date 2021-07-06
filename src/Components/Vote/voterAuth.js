@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 Need to be able to send the id to the vote page, after verifying access pw
 */
 
+// Has the user select thier groups form and verify with a password
 class VoterAuth extends React.Component {
   handleChange(e) {
     this.setState({ id: e.target.value });
@@ -12,7 +13,7 @@ class VoterAuth extends React.Component {
 
   submitForm(e) {
     e.preventDefault();
-    this.props.history.push({ pathname: "/vote/" + "name" });
+    this.props.history.push({ pathname: "/vote/name" });
   }
 
   render() {
