@@ -2,6 +2,9 @@
 
 #### By Josh Bottelberghe and Macklin Freitag
 
+Link to repo
+https://github.com/jbottelb/superlative
+
 Basically, one person creates a voting form.
 They give it a name, and an access password. They
 also list a bunch of people that will be in the form.
