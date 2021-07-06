@@ -45,6 +45,7 @@ export const GetForm = (GroupID) => {
   return results;
 };
 
+// adds votes to the form
 export const UpdateForm = (GroupID, votes) => {
   const query = new Parse.Query("MyCustomClassName");
   try {
@@ -66,6 +67,7 @@ export const UpdateForm = (GroupID, votes) => {
   }
 };
 
+// gets form by id. Currently not used
 export const getById = (id) => {
   const Lesson = Parse.Object.extend("Lesson");
   const query = new Parse.Query(Lesson);
