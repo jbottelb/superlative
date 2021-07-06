@@ -9,7 +9,8 @@ The only person who uses authentification is the person who creates the form.
 
 The changelog states all features that are functional.
 
-How we do on the feature 4 rubric:\
+## How we do on the feature 4 rubric:\
+
 Submitted on time: yes\
 Formatting: yes (could use a couple more comments)\
 Formtting 2: yes (anything new need to be added to changelog)\
@@ -24,7 +25,8 @@ UML: Yes (in public)
 
 Both the component Tree diagram and UML are in the public folder
 
-DB: (this probably looks awful in md)\
+## DB: (this probably looks awful in md)\
+
 Table users {\
 id int [pk, increment] // auto-increment\
 username varchar\
