@@ -18,15 +18,38 @@ country_code int
 }
 
 Table form {
-code int \[pk\]
-members []
+// Creating tables
+Table users as U {
+id int [pk, increment] // auto-increment
+username varchar
+password varchar
+email varchar
+created_at timestamp
+}
+
+Table form {
+code int [pk]
 creator varchar
 GroupName varchar
 Password varchar
-data array
 }
 
+Table award {
+awardCode int [pk]
+formCode int
+title varchar
+candadites array
+}
+
+Table candidate {
+awardCode int
+name varchar
+votes int
+
+}
 // Creating references
 // You can also define relaionship separately
 // > many-to-one; < one-to-many; - one-to-one
 Ref: U.username < form.creator
+Ref: form.code < award.formCode
+Ref: award.awardCode < candidate.awardCode
