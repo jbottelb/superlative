@@ -1,6 +1,8 @@
-import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
+import React from "react";
 
 // creates a selector for each candidate
-export function Candidate({ name }) {
-  return html` <option value="${name}">${name}</option> `;
-}
+const Candidate = ({ name }) => {
+  return <option value={name}>{name}</option>;
+};
+
+export default Candidate;

@@ -18,7 +18,6 @@ const Home = () => {
       <h2>TODO</h2>
       <ul>
         <li>Add voting functionality</li>
-        <li>View a form from a Form name</li>
         <li>Add styling</li>
         <li>Authentification for creating forms</li>
         <li>Make home page an acutal home page, not a todo</li>
