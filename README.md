@@ -1,6 +1,6 @@
 # Superlative Voter
 
-## By Josh Bottelberghe and Macklin Freitag
+#### By Josh Bottelberghe and Macklin Freitag
 
 Basically, one person creates a voting form.
 They give it a name, and an access password. They
@@ -18,7 +18,7 @@ The changelog states all features that are functional.
 Submitted on time: yes\
 Formatting: yes (could use a couple more comments)\
 Formtting 2: yes (anything new need to be added to changelog)\
-No Errors: no (some unused varables in scaffloding for next part)\
+No Errors: yes (for the features for this part)\
 Webpack: yes\
 Tree Diagram: yes (in public)\
 Load Data: yes (voter form can be loaded from ID)\
