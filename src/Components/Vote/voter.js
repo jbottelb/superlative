@@ -30,7 +30,7 @@ const Voter = () => {
   // post voting
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("No errors");
+    console.log(name);
 
     alert("Vote submitted");
   };
