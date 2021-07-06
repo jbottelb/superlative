@@ -40,6 +40,7 @@ class CreateForm extends React.Component {
       data,
       this.state.Creator
     );
+    alert("Form Submitted and Created");
   };
   myChangeHandler = (event) => {
     let nam = event.target.name;
