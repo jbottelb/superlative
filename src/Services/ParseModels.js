@@ -45,6 +45,27 @@ export const GetForm = (GroupID) => {
   return results;
 };
 
+export const UpdateForm = (GroupID, votes) => {
+  const query = new Parse.Query("MyCustomClassName");
+  try {
+    // here you put the objectId that you want to update
+    const object = query.get("xKue915KBG");
+    object.set("myCustomKey1Name", "new value");
+    try {
+      const response = object.save();
+      // You can use the "get" method to get the value of an attribute
+      // Ex: response.get("<ATTRIBUTE_NAME>")
+      // Access the Parse Object attributes using the .GET method
+      console.log(response.get("myCustomKey1Name"));
+      console.log("MyCustomClassName updated", response);
+    } catch (error) {
+      console.error("Error while updating ", error);
+    }
+  } catch (error) {
+    console.error("Error while retrieving object ", error);
+  }
+};
+
 export const getById = (id) => {
   const Lesson = Parse.Object.extend("Lesson");
   const query = new Parse.Query(Lesson);
