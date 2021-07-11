@@ -39,9 +39,7 @@ export const GetForm = (GroupID) => {
       console.log(data);
       console.log(Creator);
     }
-  } catch (error) {
-    console.error("Error while fetching From", error);
-  }
+  } catch (error) {}
   return results;
 };
 

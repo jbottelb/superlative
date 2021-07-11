@@ -11,10 +11,27 @@ const Voter = () => {
   const [forms, setForms] = useState([]);
   const [name, setName] = useState();
 
+  // this will hold all the current votes on a candidate
+  const [options, setOptions] = useState([]);
+
   // get the form NOTE: results are a list of matches
   useEffect(() => {
     GetForm(formId).then((forms) => {
-      // console.log(forms[0].toJSON());
+      // set data of choices about the awards
+      // o is the tempory object we use to build, before setting object
+      const o = {};
+      const data = forms[0].toJSON().data;
+
+      // adds an award to the o
+      function addElement(item) {
+        o[item.award] = item.candidates[0].name;
+      }
+      data.forEach(addElement);
+
+      // set the inital vote options
+      setOptions(o);
+
+      // set the data for components
       setForms(forms);
     });
   }, []); // IK this is a "Problem" but IDK the solution
@@ -22,15 +39,20 @@ const Voter = () => {
   // handle selection changes
   const onChangeHandler = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
-    // Continuously updating name to be added on submit
+
+    // change the object award name to the new selected
+    const o = options;
+    o[e.target.id] = e.target.value;
+
+    // make sure the selector changes too
     setName(e.target.value);
   };
 
   // post voting (not yet implimented)
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(name);
+    console.log(e.target);
+    console.log(options);
 
     alert("Vote submitted");
   };
@@ -42,8 +64,8 @@ const Voter = () => {
       <form id="vote" onSubmit={onSubmitHandler}>
         {forms.length > 0 &&
           forms[0].toJSON().data.map((award) => (
-            <div>
-              <span>
+            <div key={award.award}>
+              <span key={award.award}>
                 <li key={award.award}>
                   Award Title:{award.award}
                   <br />
