@@ -51,7 +51,6 @@ const Voter = () => {
   // post voting (not yet implimented)
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(e.target);
     console.log(options);
 
     alert("Vote submitted");
@@ -67,7 +66,7 @@ const Voter = () => {
             <div key={award.award}>
               <span key={award.award}>
                 <li key={award.award}>
-                  Award Title:{award.award}
+                  Award Title: {award.award}
                   <br />
                   <select
                     id={award.award}
