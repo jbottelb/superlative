@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./Components/Home.js";
 import About from "./Components/About.js";
 import Nav from "./Components/Nav/nav.js";
-import SignIn from "./Components/SignIn/signIn.js";
+import Signup from "./Components/Auth/Signup.js";
 import Vote from "./Components/Vote/VoteParent.js";
 import Voter from "./Components/Vote/voter.js";
 import Create from "./Components/CreateForm/create.js";
@@ -22,7 +22,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
-          <Route path="/SignIn" exact component={SignIn} />
+          <Route path="/SignIn" exact component={Signup} />
           <Route path="/create" exact component={Create} />
           <Route path="/Vote" exact component={Vote} />
           <Route path="/voter/:id" exact component={Voter} />
