@@ -33,7 +33,9 @@ export const login = (email, password) => {
   } catch (error) {
     console.error("Error while logging in user", error);
     res = "";
+    console.log("error");
   }
+  console.log(res);
 
   return res;
 };

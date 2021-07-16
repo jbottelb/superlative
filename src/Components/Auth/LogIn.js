@@ -19,6 +19,7 @@ export default function Login() {
       setError("");
       setLoading(true);
       const u = await login(emailRef.current.value, passwordRef.current.value);
+
       setUser(u);
       history.push("/");
     } catch {
