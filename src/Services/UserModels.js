@@ -23,14 +23,17 @@ export const signUp = (email, password) => {
 
 // log in
 export const login = (email, password) => {
+  let res = "";
   try {
     // Pass the username and password to logIn function
-    let user = Parse.User.logIn("newUserName", "#Password123");
+    let user = Parse.User.logIn(email, password);
     // Do stuff after successful login
     console.log("Logged in user", user);
+    res = email;
   } catch (error) {
     console.error("Error while logging in user", error);
+    res = "";
   }
 
-  return email;
+  return res;
 };
