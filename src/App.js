@@ -3,6 +3,7 @@ import Home from "./Components/Home.js";
 import About from "./Components/About.js";
 import Nav from "./Components/Nav/nav.js";
 import Signup from "./Components/Auth/Signup.js";
+import Login from "./Components/Auth/LogIn.js";
 import Vote from "./Components/Vote/VoteParent.js";
 import Voter from "./Components/Vote/voter.js";
 import Create from "./Components/CreateForm/create.js";
@@ -26,6 +27,7 @@ const App = () => {
           <Nav />
           {user}
           <Switch>
+            <Route path="/login" exact component={Login} />
             <Route path="/" exact component={Home} />
             <Route path="/about" exact component={About} />
             <Route path="/SignIn" exact component={Signup} />
