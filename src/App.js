@@ -20,6 +20,7 @@ Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;
 
 // application
+// the hello will be removed later, it is helpful for debugging
 const App = () => {
   const [user, setUser] = useState(null);
 
