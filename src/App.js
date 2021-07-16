@@ -28,7 +28,7 @@ const App = () => {
       <Router>
         <div className="App">
           <Nav />
-          {user}
+          Hello {user}!
           <Switch>
             <SignInRoute path="/login" exact component={Login} />
             <Route path="/" exact component={Home} />
