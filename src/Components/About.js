@@ -1,8 +1,13 @@
 import React from "react";
 
-// Simple about page. Will contain more info later
+// Simple about page.
 const About = () => {
-  return <p>This is the About Page</p>;
+  return (
+    <p>
+      This app was developed by Josh Bottelberghe for Modern Web Development
+      summer 2021.{" "}
+    </p>
+  );
 };
 
 export default About;
