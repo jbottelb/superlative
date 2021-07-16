@@ -19,6 +19,9 @@ const Nav = () => {
         <Link to="/create">
           <li>Create</li>
         </Link>
+        <Link to="/view">
+          <li>view</li>
+        </Link>
         <Link to="/about">
           <li>About</li>
         </Link>
