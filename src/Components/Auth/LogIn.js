@@ -10,6 +10,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  const { user, setUser } = useContext(UserContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -17,7 +18,8 @@ export default function Login() {
     try {
       setError("");
       setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
+      const u = await login(emailRef.current.value, passwordRef.current.value);
+      setUser(u);
       history.push("/");
     } catch {
       setError("Failed to log in");
