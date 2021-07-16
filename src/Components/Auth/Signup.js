@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { signUp } from "../../Services/UserModels";
 import { Link, useHistory } from "react-router-dom";
+import { UserContext } from "../../contexts/authContext";
 
 /*
 I developed this with the help of this youtube video:
@@ -16,6 +17,7 @@ export default function Signup() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  const { user, setUser } = useContext(UserContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -24,14 +26,12 @@ export default function Signup() {
       return setError("Passwords do not match");
     }
 
-    try {
-      setError("");
-      setLoading(true);
-      await signUp(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
-    } catch {
-      setError("Failed to create an account");
-    }
+    setError("");
+    setLoading(true);
+    const u = await signUp(emailRef.current.value, passwordRef.current.value);
+    setUser(u);
+    console.log(u);
+    history.push("/");
 
     setLoading(false);
   }

@@ -9,26 +9,33 @@ import Create from "./Components/CreateForm/create.js";
 import Parse from "parse";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import * as Env from "./environments.js";
+import { UserContext } from "./contexts/authContext";
+import { useState } from "react";
 
 Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
 Parse.serverURL = Env.SERVER_URL;
 
 // application
 const App = () => {
+  const [user, setUser] = useState(null);
+
   return (
-    <Router>
-      <div className="App">
-        <Nav />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={About} />
-          <Route path="/SignIn" exact component={Signup} />
-          <Route path="/create" exact component={Create} />
-          <Route path="/Vote" exact component={Vote} />
-          <Route path="/voter/:id" exact component={Voter} />
-        </Switch>
-      </div>
-    </Router>
+    <UserContext.Provider value={{ user, setUser }}>
+      <Router>
+        <div className="App">
+          <Nav />
+          {user}
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/SignIn" exact component={Signup} />
+            <Route path="/create" exact component={Create} />
+            <Route path="/Vote" exact component={Vote} />
+            <Route path="/voter/:id" exact component={Voter} />
+          </Switch>
+        </div>
+      </Router>
+    </UserContext.Provider>
   );
 };
 
