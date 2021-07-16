@@ -30,7 +30,7 @@ export default function Signup() {
     setLoading(true);
     const u = await signUp(emailRef.current.value, passwordRef.current.value);
     setUser(u);
-    console.log(u);
+
     history.push("/");
 
     setLoading(false);

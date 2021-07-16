@@ -18,5 +18,5 @@ export const signUp = (email, password) => {
   } catch (error) {
     console.error("Error while signing up user", error);
   }
-  return user["username"];
+  return email;
 };
