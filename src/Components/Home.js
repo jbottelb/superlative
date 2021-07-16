@@ -5,11 +5,13 @@ const Home = () => {
   return (
     <div>
       <h1> Project Status </h1>
+      <p>Feature 5 is implimented. This is version 0.3.0.</p>
       <p>
-        Feature 5 is being reworked. Right now, users can sign up. View and
-        Create are both protected routes.
+        Sign Up and login function. Logged in users can't access auth, not
+        logged in cannot access create or view (redirected to auth). Routes are
+        protected (Typing urls wont evade log in). Auth methods in
+        Services/UserModels
       </p>
-      <p>Log in is currently buggy. </p>
       <h2>TODO</h2>
       <ul>
         <li>Add voting functionality (Connect from to update)</li>
