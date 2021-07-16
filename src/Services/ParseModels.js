@@ -1,4 +1,5 @@
 import Parse from "parse";
+import ParseUser from "parse";
 
 // contains database functions
 
