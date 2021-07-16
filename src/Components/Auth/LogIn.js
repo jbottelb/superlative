@@ -24,6 +24,7 @@ export default function Login() {
       history.push("/");
     } catch {
       setError("Failed to log in");
+      setUser("");
     }
 
     setLoading(false);
