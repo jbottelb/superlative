@@ -11,6 +11,7 @@ import view from "./Components/view/view.js";
 import Parse from "parse";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProtectedRoute from "./Components/routing/protected";
+import SignInRoute from "./Components/routing/SignInRoute";
 import * as Env from "./environments.js";
 import { UserContext } from "./contexts/authContext";
 import { useState } from "react";
@@ -29,10 +30,10 @@ const App = () => {
           <Nav />
           {user}
           <Switch>
-            <Route path="/login" exact component={Login} />
+            <SignInRoute path="/login" exact component={Login} />
             <Route path="/" exact component={Home} />
             <Route path="/about" exact component={About} />
-            <Route path="/signup" exact component={Signup} />
+            <SignInRoute path="/signup" exact component={Signup} />
             <ProtectedRoute path="/create" exact component={Create} />
             <Route path="/Vote" exact component={Vote} />
             <Route path="/voter/:id" exact component={Voter} />
