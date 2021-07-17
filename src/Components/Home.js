@@ -12,14 +12,19 @@ const Home = () => {
         protected (Typing urls wont evade log in). Auth methods in
         Services/UserModels
       </p>
+      <p>
+        You can create a user, but there is no log out function (yet) So to test
+        the log in, you will need to refresh the page. But you will be logged in
+        after creating an account. Then, you can access the create a form and
+        view created form pages. At this point, you cannot access the auth
+        components.
+      </p>
       <h2>TODO</h2>
       <ul>
         <li>Add voting functionality (Connect from to update)</li>
         <li>Let users view the forms they have created</li>
         <li>Add styling</li>
-        <li>Authentification for creating forms and viewing</li>
         <li>Make home page an acutal home page, not a todo</li>
-        <li>Write an about page</li>
       </ul>
     </div>
   );
