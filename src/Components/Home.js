@@ -4,7 +4,7 @@ import React from "react";
 const Home = () => {
   return (
     <div>
-      <h1> Project Status </h1>
+      <h1> Project Status version 0.3.0 </h1>
       <p>Feature 5 is implimented. This is version 0.3.0.</p>
       <p>
         Sign Up and login function. Logged in users can't access auth, not

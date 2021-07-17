@@ -7,3 +7,4 @@ Update 7/16/21
 - context created to hold users name
 - protected routes created
 - user cannot reach auth if already signed in
+- Log out function created
