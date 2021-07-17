@@ -4,6 +4,7 @@ import About from "./Components/About.js";
 import Nav from "./Components/Nav/nav.js";
 import Signup from "./Components/Auth/Signup.js";
 import Login from "./Components/Auth/LogIn.js";
+import Logout from "./Components/Auth/LogOut.js";
 import Vote from "./Components/Vote/VoteParent.js";
 import Voter from "./Components/Vote/voter.js";
 import Create from "./Components/CreateForm/create.js";
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/Vote" exact component={Vote} />
             <Route path="/voter/:id" exact component={Voter} />
             <ProtectedRoute path="/view" exact component={view} />
+            <ProtectedRoute path="/logout" exact component={Logout} />
           </Switch>
         </div>
       </Router>
