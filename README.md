@@ -1,6 +1,6 @@
 # Superlative Voter
 
-#### By Josh Bottelberghe and Macklin Freitag
+#### By Josh Bottelberghe
 
 Link to repo
 https://github.com/jbottelb/superlative
