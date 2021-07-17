@@ -20,7 +20,7 @@ export default function Login() {
       setError("");
       setLoading(true);
       const u = await login(emailRef.current.value, passwordRef.current.value);
-      // we will get a u if it succeeds, dont set user if it fails
+      // we will get a u (user email) if it succeeds, dont set user if it fails
       if (!u) {
         alert("Invalid Log In!");
       } else {
