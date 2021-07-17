@@ -22,11 +22,11 @@ export const signUp = (email, password) => {
 };
 
 // log in
-export const login = (email, password) => {
+export async function login(email, password) {
   let res = "";
   try {
     // Pass the username and password to logIn function
-    let user = Parse.User.logIn(email, password);
+    let user = await Parse.User.logIn(email, password);
     // Do stuff after successful login
     console.log("Logged in user", user);
     res = email;
@@ -38,4 +38,4 @@ export const login = (email, password) => {
   console.log(res);
 
   return res;
-};
+}

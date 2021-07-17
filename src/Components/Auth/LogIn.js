@@ -10,8 +10,9 @@ export default function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
+  // on login submit
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -19,9 +20,13 @@ export default function Login() {
       setError("");
       setLoading(true);
       const u = await login(emailRef.current.value, passwordRef.current.value);
-
-      setUser(u);
-      history.push("/");
+      // we will get a u if it succeeds, dont set user if it fails
+      if (!u) {
+        alert("Invalid Log In!");
+      } else {
+        setUser(u);
+        history.push("/");
+      }
     } catch {
       setError("Failed to log in");
       setUser("");
