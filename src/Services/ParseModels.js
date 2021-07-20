@@ -75,3 +75,35 @@ export const getById = (id) => {
     return result;
   });
 };
+
+// sign up
+export const vote = (groupName, data) => {
+  const query = new Parse.Query(From);
+  try {
+    // here you put the objectId that you want to update
+    const object = query.get("xKue915KBG");
+    object.set("GroupName", "A string");
+    object.set("Password", "A string");
+    object.set("data", [1, "a string"]);
+    object.set("Creator", "A string");
+    object.set("candidates", [1, "a string"]);
+    object.set("Candidates", [1, "a string"]);
+    try {
+      const response = object.save();
+      // You can use the "get" method to get the value of an attribute
+      // Ex: response.get("<ATTRIBUTE_NAME>")
+      // Access the Parse Object attributes using the .GET method
+      console.log(response.get("GroupName"));
+      console.log(response.get("Password"));
+      console.log(response.get("data"));
+      console.log(response.get("Creator"));
+      console.log(response.get("candidates"));
+      console.log(response.get("Candidates"));
+      console.log("From updated", response);
+    } catch (error) {
+      console.error("Error while updating From", error);
+    }
+  } catch (error) {
+    console.error("Error while retrieving object From", error);
+  }
+};

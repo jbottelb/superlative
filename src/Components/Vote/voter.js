@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { GetForm } from "../../Services/ParseModels.js";
+import { GetForm, vote } from "../../Services/ParseModels.js";
 
 // Makes the user put in the key, select their name,
 // and let's them vote for all the awards in the form
@@ -34,7 +34,7 @@ const Voter = () => {
       // set the data for components
       setForms(forms);
     });
-  }, []); // IK this is a "Problem" but IDK the solution
+  }, []); // this adds a warning
 
   // handle selection changes
   const onChangeHandler = (e) => {
@@ -52,6 +52,8 @@ const Voter = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     console.log(options);
+
+    // send the vote to the db
 
     alert("Vote submitted");
   };
