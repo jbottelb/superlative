@@ -10,8 +10,11 @@ class VoterAuth extends React.Component {
   };
 
   // redirecrs to voting page based off name of the group
+  /*
+  future updates will have a password verification into forms
+  */
+
   submitForm(e) {
-    // some time we will verify the password first
     e.preventDefault();
     this.props.history.push({ pathname: "/voter/" + this.state.FormId });
   }
@@ -20,14 +23,12 @@ class VoterAuth extends React.Component {
     return (
       <form onSubmit={this.submitForm.bind(this)}>
         <label>
-          GroupName (Try "Test2" for testing):
+          GroupName:
+          <br />
           <input type="text" name="FormId" onChange={this.myChangeHandler} />
         </label>
-        <label>
-          Password:
-          <input type="text" onChange={this.myChangeHandler} />
-        </label>
-        <input type="submit" value="Submit" />
+        <br />
+        <input type="submit" value="Go" />
       </form>
     );
   }
