@@ -18,26 +18,26 @@ const ViewForm = () => {
 
   return (
     <div>
-      <h2>Form: {groupName}</h2>
-      <ol>
+      <h2>Form Name: {groupName}</h2>
+      <ul>
         {form.data &&
           form.data.map((award) => (
             <div key={award.award}>
               <span key={award.award}>
                 <li key={award.award}>
-                  Award Title: {award.award}
-                  <ol>
+                  {award.award}
+                  <ul>
                     {award.candidates.map((candidate) => (
                       <li key={candidate.name}>
-                        {candidate.name} {candidate.votes}
+                        {candidate.name}, {candidate.votes}
                       </li>
                     ))}
-                  </ol>
+                  </ul>
                 </li>
               </span>
             </div>
           ))}
-      </ol>
+      </ul>
     </div>
   );
 };

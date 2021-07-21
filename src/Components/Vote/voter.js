@@ -62,27 +62,29 @@ const Voter = () => {
   return (
     <div>
       <form id="vote" onSubmit={onSubmitHandler}>
-        {forms.length > 0 &&
-          forms[0].toJSON().data.map((award) => (
-            <div key={award.award}>
-              <span key={award.award}>
-                <li key={award.award}>
-                  Award Title: {award.award}
-                  <br />
-                  <select
-                    id={award.award}
-                    form="userform"
-                    onChange={onChangeHandler}
-                  >
-                    {award.candidates.map((candidate) => (
-                      <option value={candidate.name}>{candidate.name}</option>
-                    ))}
-                  </select>
-                </li>
-              </span>
-            </div>
-          ))}
-        <input type="submit" />
+        <ul>
+          {forms.length > 0 &&
+            forms[0].toJSON().data.map((award) => (
+              <div key={award.award}>
+                <span key={award.award}>
+                  <li key={award.award}>
+                    {award.award}
+                    <br />
+                    <select
+                      id={award.award}
+                      form="userform"
+                      onChange={onChangeHandler}
+                    >
+                      {award.candidates.map((candidate) => (
+                        <option value={candidate.name}>{candidate.name}</option>
+                      ))}
+                    </select>
+                  </li>
+                </span>
+              </div>
+            ))}
+          <input type="submit" />
+        </ul>
       </form>
     </div>
   );

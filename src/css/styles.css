@@ -2,6 +2,7 @@
 General CSS
 Not super interested in styling, just enough to make it 
 look ok for the project. 
+A lot is inspired from w3schools.com
 */
 
 body {
@@ -68,4 +69,33 @@ a:hover {
 /* selected link */
 a:active {
   color: blue;
+}
+
+ul {
+  text-align: center;
+  list-style-type: none;
+}
+li {
+  text-align: center;
+}
+select {
+  width: 60%;
+  padding: 10px, 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+/*
+Button 
+*/
+
+input[type="submit"] {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }
