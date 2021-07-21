@@ -18,8 +18,6 @@ Both the component Tree diagram and UML are in the public folder
 
 Known Errors:
 
-- As long as you are signed in, you can acces any form
-  Fix: add a new protected route that makes sure you own the form
 - There are no restrictions to voting multiple times
   Fix: there would have to be some logging of who has voted. One idea is to use voter keys
 

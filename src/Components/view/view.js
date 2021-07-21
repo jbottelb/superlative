@@ -3,6 +3,7 @@ import { getForms } from "../../Services/ParseModels.js";
 import { UserContext } from "../../contexts/authContext";
 import { Link } from "react-router-dom";
 
+// Shows a logged in user the forms they have created and lets them inspect them
 const View = () => {
   const [forms, setForms] = useState([]);
   const { user } = useContext(UserContext);

@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { GetForm } from "../../Services/ParseModels.js";
 import { useParams } from "react-router-dom";
 
+/*
+This route is protected by typing route even if signed in by another user
+*/
+
 // views a form by a passed name parameter
 const ViewForm = () => {
   const params = useParams();

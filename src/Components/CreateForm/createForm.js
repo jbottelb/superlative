@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createForm } from "../../Services/ParseModels.js";
-import { addUserForm } from "../../Services/UserModels.js";
+import { groupNameExists } from "../../Services/ParseModels.js";
 import { UserContext } from "../../contexts/authContext";
 
 // Creates html form to create Voting Form
@@ -40,16 +40,23 @@ class CreateForm extends React.Component {
     // creator will correspond to email
     const { user } = this.context;
 
-    // now we submit to the db
-    createForm(
-      this.state.GroupeName,
-      this.state.Password,
-      Candidates,
-      data,
-      user
-    );
+    // there cannot be duplicate form names
+    groupNameExists(this.state.GroupeName).then((uniqueName) => {
+      if (uniqueName) {
+        // now we submit to the db
+        createForm(
+          this.state.GroupeName,
+          this.state.Password,
+          Candidates,
+          data,
+          user
+        );
 
-    alert("Form Submitted and Created");
+        alert("Form Submitted and Created");
+      } else {
+        alert("That Form name is already in use!");
+      }
+    });
   };
   myChangeHandler = (event) => {
     let nam = event.target.name;

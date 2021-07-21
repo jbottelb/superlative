@@ -120,3 +120,15 @@ export async function getForms(email) {
   }
   return names;
 }
+
+// this checks if a groupname is already used
+export async function groupNameExists(GroupName) {
+  const From = Parse.Object.extend("From");
+  const query = new Parse.Query(From);
+
+  query.equalTo("GroupName", GroupName);
+  const results = await query.find();
+  console.log(results.length);
+
+  return !results.length;
+}
