@@ -51,9 +51,9 @@ const Voter = () => {
   // post voting (not yet implimented)
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(options);
 
     // send the vote to the db
+    vote(formId, options);
 
     alert("Vote submitted");
   };

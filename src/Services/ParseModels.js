@@ -66,39 +66,47 @@ export const UpdateForm = (GroupID, votes) => {
   }
 };
 
-// gets form by id. Currently not used
-export const getById = (id) => {
-  const Lesson = Parse.Object.extend("Lesson");
-  const query = new Parse.Query(Lesson);
-  return query.get(id).then((result) => {
-    // return Lesson object with objectId: id
-    return result;
-  });
-};
-
-// sign up
-export const vote = (groupName, data) => {
+// get ID from form name
+export async function getForm(groupName) {
+  const From = Parse.Object.extend("From");
   const query = new Parse.Query(From);
+  // You can also query by using a parameter of an object
+  query.equalTo("GroupName", groupName);
+  const results = await query.find();
+
+  return results;
+}
+
+// vote data is a map with all the choices of votes
+export async function vote(groupName, data) {
+  // get from from name save to og var
+  var og = await getForm(groupName);
+
+  const id = og[0].id;
+
+  og = og[0].toJSON().data;
+
+  // add votes to the original data by using new data map
+  for (var i = 0; i < og.length; i++) {
+    const award = og[i]["award"];
+    const rec = data[award];
+
+    for (var j = 0; j < og[i]["candidates"].length; j++) {
+      if (og[i]["candidates"][j].name === rec) {
+        og[i]["candidates"][j].votes += 1;
+      }
+    } // each candidate
+  } // each award
+
+  // now we need to post og as it has been updated
+  // we can use the id we saved
+  const query = new Parse.Query("From");
   try {
-    // here you put the objectId that you want to update
-    const object = query.get("xKue915KBG");
-    object.set("GroupName", "A string");
-    object.set("Password", "A string");
-    object.set("data", [1, "a string"]);
-    object.set("Creator", "A string");
-    object.set("candidates", [1, "a string"]);
-    object.set("Candidates", [1, "a string"]);
+    const object = await query.get(id);
+    object.set("data", og);
     try {
-      const response = object.save();
-      // You can use the "get" method to get the value of an attribute
-      // Ex: response.get("<ATTRIBUTE_NAME>")
-      // Access the Parse Object attributes using the .GET method
-      console.log(response.get("GroupName"));
-      console.log(response.get("Password"));
-      console.log(response.get("data"));
-      console.log(response.get("Creator"));
-      console.log(response.get("candidates"));
-      console.log(response.get("Candidates"));
+      const response = await object.save();
+
       console.log("From updated", response);
     } catch (error) {
       console.error("Error while updating From", error);
@@ -106,4 +114,4 @@ export const vote = (groupName, data) => {
   } catch (error) {
     console.error("Error while retrieving object From", error);
   }
-};
+}
