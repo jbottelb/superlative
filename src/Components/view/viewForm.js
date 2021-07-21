@@ -33,7 +33,7 @@ const ViewForm = () => {
                   <ul>
                     {award.candidates.map((candidate) => (
                       <li key={candidate.name}>
-                        {candidate.name}, {candidate.votes}
+                        {candidate.name}: {candidate.votes}
                       </li>
                     ))}
                   </ul>
