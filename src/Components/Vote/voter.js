@@ -19,20 +19,27 @@ const Voter = () => {
     GetForm(formId).then((forms) => {
       // set data of choices about the awards
       // o is the tempory object we use to build, before setting object
-      const o = {};
-      const data = forms[0].toJSON().data;
+      console.log(forms);
+      if (forms[0]) {
+        const o = {};
+        const data = forms[0].toJSON().data;
 
-      // adds an award to the o
-      function addElement(item) {
-        o[item.award] = item.candidates[0].name;
+        // adds an award to the o
+        function addElement(item) {
+          o[item.award] = item.candidates[0].name;
+        }
+        data.forEach(addElement);
+
+        // set the inital vote options
+        setOptions(o);
+
+        // set the data for components
+        setForms(forms);
+      } else {
+        alert(
+          "That form does not exist. If you did not create this form, ask the creator if the name is correct. You can view your forms in View Created Forms."
+        );
       }
-      data.forEach(addElement);
-
-      // set the inital vote options
-      setOptions(o);
-
-      // set the data for components
-      setForms(forms);
     });
   }, []); // this adds a warning
 
