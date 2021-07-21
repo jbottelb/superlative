@@ -16,13 +16,14 @@ const View = () => {
   return (
     <div>
       <h2>Superlative Forms for {user}</h2>
-
-      {forms.length > 0 &&
-        forms.map((form) => (
-          <div>
-            <Link to={"/view/" + form}>{form}</Link>
-          </div>
-        ))}
+      <div class="viewbox">
+        {forms.length > 0 &&
+          forms.map((form) => (
+            <div class="viewitem">
+              <Link to={"/view/" + form}>{form}</Link>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };

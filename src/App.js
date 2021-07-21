@@ -11,7 +11,7 @@ import Create from "./Components/CreateForm/create.js";
 import view from "./Components/view/view.js";
 import viewForm from "./Components/view/viewForm.js";
 import Parse from "parse";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import ProtectedRoute from "./Components/routing/protected";
 import SignInRoute from "./Components/routing/SignInRoute";
 import * as Env from "./environments.js";
@@ -28,24 +28,36 @@ const App = () => {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <Router>
+        <Link to="/">
+          <img
+            src="https://eg8ti.csb.app/img/Superlative.png"
+            alt="Superlative"
+            class="resize"
+          />
+        </Link>
         <div className="App">
-          <Nav />
-          <Switch>
-            <SignInRoute path="/login" exact component={Login} />
-            <Route path="/" exact component={Home} />
-            <Route path="/about" exact component={About} />
-            <SignInRoute path="/signup" exact component={Signup} />
-            <ProtectedRoute path="/create" exact component={Create} />
-            <Route path="/Vote" exact component={Vote} />
-            <Route path="/voter/:id" exact component={Voter} />
-            <ProtectedRoute path="/view" exact component={view} />
-            <ProtectedRoute
-              path="/view/:groupName"
-              exact
-              component={viewForm}
-            />
-            <ProtectedRoute path="/logout" exact component={Logout} />
-          </Switch>
+          <div>
+            <Nav />
+            <br />
+          </div>
+          <div>
+            <Switch>
+              <SignInRoute path="/login" exact component={Login} />
+              <Route path="/" exact component={Home} />
+              <Route path="/about" exact component={About} />
+              <SignInRoute path="/signup" exact component={Signup} />
+              <ProtectedRoute path="/create" exact component={Create} />
+              <Route path="/Vote" exact component={Vote} />
+              <Route path="/voter/:id" exact component={Voter} />
+              <ProtectedRoute path="/view" exact component={view} />
+              <ProtectedRoute
+                path="/view/:groupName"
+                exact
+                component={viewForm}
+              />
+              <ProtectedRoute path="/logout" exact component={Logout} />
+            </Switch>
+          </div>
         </div>
       </Router>
     </UserContext.Provider>

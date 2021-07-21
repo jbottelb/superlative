@@ -1,3 +1,4 @@
+import "../../css/nav.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -5,29 +6,25 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <nav>
-      <h3>Superlative</h3>
       <ul className="nav-links">
-        <Link to="/">
-          <li>Home</li>
-        </Link>
-        <Link to="/signup">
-          <li>Sign Up / Log in</li>
-        </Link>
-        <Link to="/vote">
-          <li>Vote on a Form</li>
-        </Link>
-        <Link to="/create">
-          <li>Create a Form</li>
-        </Link>
-        <Link to="/view">
-          <li>View Created Forms</li>
-        </Link>
-        <Link to="/about">
-          <li>About</li>
-        </Link>
-        <Link to="/logout">
-          <li>Log Out</li>
-        </Link>
+        <li className="nav-links">
+          <Link to="/signup">Sign Up/Log in</Link>
+        </li>
+        <li className="nav-links">
+          <Link to="/vote">Vote on a Form</Link>
+        </li>
+        <li className="nav-links">
+          <Link to="/create">Create a Form</Link>
+        </li>
+        <li className="nav-links">
+          <Link to="/view">View Created Forms</Link>
+        </li>
+        <li className="nav-links">
+          <Link to="/about">About</Link>
+        </li>
+        <li className="nav-links">
+          <Link to="/logout">Log Out</Link>
+        </li>
       </ul>
     </nav>
   );
