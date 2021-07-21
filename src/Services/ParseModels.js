@@ -1,5 +1,4 @@
 import Parse from "parse";
-import ParseUser from "parse";
 
 // contains database functions
 
@@ -44,30 +43,8 @@ export const GetForm = (GroupID) => {
   return results;
 };
 
-// adds votes to the form
-export const UpdateForm = (GroupID, votes) => {
-  const query = new Parse.Query("MyCustomClassName");
-  try {
-    // here you put the objectId that you want to update
-    const object = query.get("xKue915KBG");
-    object.set("myCustomKey1Name", "new value");
-    try {
-      const response = object.save();
-      // You can use the "get" method to get the value of an attribute
-      // Ex: response.get("<ATTRIBUTE_NAME>")
-      // Access the Parse Object attributes using the .GET method
-      console.log(response.get("myCustomKey1Name"));
-      console.log("MyCustomClassName updated", response);
-    } catch (error) {
-      console.error("Error while updating ", error);
-    }
-  } catch (error) {
-    console.error("Error while retrieving object ", error);
-  }
-};
-
 // get ID from form name
-export async function getForm(groupName) {
+export async function getFormID(groupName) {
   const From = Parse.Object.extend("From");
   const query = new Parse.Query(From);
   // You can also query by using a parameter of an object
@@ -80,10 +57,8 @@ export async function getForm(groupName) {
 // vote data is a map with all the choices of votes
 export async function vote(groupName, data) {
   // get from from name save to og var
-  var og = await getForm(groupName);
-
+  var og = await getFormID(groupName);
   const id = og[0].id;
-
   og = og[0].toJSON().data;
 
   // add votes to the original data by using new data map
@@ -92,13 +67,14 @@ export async function vote(groupName, data) {
     const rec = data[award];
 
     for (var j = 0; j < og[i]["candidates"].length; j++) {
+      // find the correct candidate to increment votes
       if (og[i]["candidates"][j].name === rec) {
         og[i]["candidates"][j].votes += 1;
       }
     } // each candidate
   } // each award
 
-  // now we need to post og as it has been updated
+  // now we need to send the data (og) to the db
   // we can use the id we saved
   const query = new Parse.Query("From");
   try {
