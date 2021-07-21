@@ -59,7 +59,6 @@ const Voter = () => {
   };
 
   // For some reason, it needs a key and IDK why
-
   return (
     <div>
       <form id="vote" onSubmit={onSubmitHandler}>

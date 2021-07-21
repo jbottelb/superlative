@@ -48,7 +48,6 @@ export async function login(email, password) {
     res = "";
     console.log("error");
   }
-  console.log(res);
 
   return res;
 }

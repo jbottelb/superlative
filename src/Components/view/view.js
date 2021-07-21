@@ -1,21 +1,24 @@
-import React from "react";
-import { useContext, useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { getForms } from "../../Services/ParseModels.js";
 import { UserContext } from "../../contexts/authContext";
-import { getForms } from "../../Services/ParseModels";
 
-// This will let users see the forms they have created
-// and check the status of them
 const View = () => {
+  const [forms, setForms] = useState([]);
   const { user } = useContext(UserContext);
 
   useEffect(() => {
     getForms(user).then((forms) => {
-      console.log(forms);
+      setForms(forms);
     });
   }, []);
 
-  // get all forms created by that user
-  return <h1>Your created Groups</h1>;
+  return (
+    <div>
+      <h2>Superlative Forms for {user}</h2>
+
+      {forms.length > 0 && forms.map((form) => form)}
+    </div>
+  );
 };
 
 export default View;
