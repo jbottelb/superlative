@@ -5,6 +5,13 @@ look ok for the project.
 A lot is inspired from w3schools.com
 */
 
+/*
+General styling first
+*/
+* {
+  text-align: center;
+}
+
 body {
   background-color: lightgrey;
   padding: 1%;

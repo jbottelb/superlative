@@ -6,7 +6,8 @@ ul.nav-links {
 }
 
 li.nav-links {
-  float: left;
+  display: inline-block;
+  float: none;
 }
 
 li a {

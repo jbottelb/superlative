@@ -67,6 +67,7 @@ class CreateForm extends React.Component {
         <input type="text" name="Candidates" onChange={this.myChangeHandler} />
         <p>Awards, comma seperated</p>
         <input type="text" name="Awards" onChange={this.myChangeHandler} />
+        <br />
         <input type="submit" />
       </form>
     );
