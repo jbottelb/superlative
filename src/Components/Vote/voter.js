@@ -9,7 +9,7 @@ const Voter = () => {
   const formId = params["id"];
 
   const [forms, setForms] = useState([]);
-  const [name, setName] = useState();
+  const [setName] = useState();
 
   // this will hold all the current votes on a candidate
   const [options, setOptions] = useState([]);
