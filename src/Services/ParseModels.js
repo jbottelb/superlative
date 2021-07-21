@@ -2,7 +2,15 @@ import Parse from "parse";
 
 // contains database functions
 
-//create a form
+/*
+ MANIFEST
+- Create Form
+- Get a form by group Name
+- Get a Group ID from a Group name
+- Vote on a form with voting data
+*/
+
+// create a form
 export const createForm = (GroupName, password, candidates, data, creator) => {
   const myNewObject = new Parse.Object("From");
   myNewObject.set("GroupName", GroupName);
@@ -19,12 +27,12 @@ export const createForm = (GroupName, password, candidates, data, creator) => {
   }
 };
 
-// get all froms by a groupID
-export const GetForm = (GroupID) => {
+// get all froms by a group name
+export const GetForm = (GroupName) => {
   const From = Parse.Object.extend("From");
   const query = new Parse.Query(From);
 
-  query.equalTo("GroupName", GroupID);
+  query.equalTo("GroupName", GroupName);
   const results = query.find();
   try {
     const results = query.find();
