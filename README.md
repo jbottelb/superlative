@@ -12,11 +12,11 @@ Then, each person uses the access password to get into the form,
 selects their name from the list of members then votes. Once they vote,
 they are recorded as having voted to prevent anyone from voting again.
 
-The only person who uses authentification is the person who creates the form.
+The only person who uses authentification is the person who creates the form. Then only they can view the form
 
 Both the component Tree diagram and UML are in the public folder
 
-## DB: (this probably looks awful in md)
+## DB:
 
 Table users {\
 id int [pk, increment] // auto-increment\

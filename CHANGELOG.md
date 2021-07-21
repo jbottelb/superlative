@@ -1,10 +1,8 @@
-# Changelog Version 0.3.0
+# Changelog Version 1.0.0
 
-Update 7/16/21
+Update 7/23/20
 
-- Sign up form created and connected to server
-- Log in also created and connected
-- context created to hold users name
-- protected routes created
-- user cannot reach auth if already signed in
-- Log out function created
+- Voting functionallity implimented
+- cleaned up testing features
+- removed no longer used features (ex user enters name in form create)
+- added CSS for styling
