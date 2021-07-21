@@ -6,5 +6,7 @@ import { UserContext } from "../../contexts/authContext";
 // and check the status of them
 export default function View() {
   const { user } = useContext(UserContext);
+
+  // get all forms created by that user
   return <p>viewer for {user}</p>;
 }

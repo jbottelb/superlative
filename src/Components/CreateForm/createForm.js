@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createForm } from "../../Services/ParseModels.js";
+import { addUserForm } from "../../Services/UserModels.js";
 import { UserContext } from "../../contexts/authContext";
 
 // Creates html form to create Voting Form
@@ -47,6 +48,7 @@ class CreateForm extends React.Component {
       data,
       user
     );
+
     alert("Form Submitted and Created");
   };
   myChangeHandler = (event) => {

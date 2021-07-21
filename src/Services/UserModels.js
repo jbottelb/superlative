@@ -1,7 +1,7 @@
 import Parse from "parse";
 
 /* 
-A bunch of auth functions
+  Auth functions
 */
 
 // sign up
@@ -18,6 +18,19 @@ export const signUp = (email, password) => {
   } catch (error) {
     console.error("Error while signing up user", error);
   }
+
+  // we also need to track groups user has created
+  const myNewObject = new Parse.Object("userGroups");
+  myNewObject.set("email", email);
+  myNewObject.set("groups", []);
+  try {
+    const result = myNewObject.save();
+    // Access the Parse Object attributes using the .GET method
+    console.log("userGroups created", result);
+  } catch (error) {
+    console.error("Error while creating userGroups: ", error);
+  }
+
   return email;
 };
 

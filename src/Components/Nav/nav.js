@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Creates a navbar, Needs some CSS
+// Creates a navbar
 const Nav = () => {
   return (
     <nav>
