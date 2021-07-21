@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createForm } from "../../Services/ParseModels.js";
+import { UserContext } from "../../contexts/authContext";
 
 // Creates html form to create Voting Form
 class CreateForm extends React.Component {
+  static contextType = UserContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -34,13 +36,16 @@ class CreateForm extends React.Component {
       data.push(element);
     }
 
+    // creator will correspond to email
+    const { user } = this.context;
+
     // now we submit to the db
     createForm(
       this.state.GroupeName,
       this.state.Password,
       Candidates,
       data,
-      this.state.Creator
+      user
     );
     alert("Form Submitted and Created");
   };
@@ -52,8 +57,6 @@ class CreateForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.mySubmitHandler}>
-        <p>Creator</p>
-        <input type="text" name="Creator" onChange={this.myChangeHandler} />
         <p>GroupName</p>
         <input type="text" name="GroupeName" onChange={this.myChangeHandler} />
         <p>Password</p>
