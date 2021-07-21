@@ -20,7 +20,7 @@ const View = () => {
       {forms.length > 0 &&
         forms.map((form) => (
           <div>
-            <Link to={"/view/" + form}>form</Link>
+            <Link to={"/view/" + form}>{form}</Link>
           </div>
         ))}
     </div>

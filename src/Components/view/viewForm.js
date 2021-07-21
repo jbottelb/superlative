@@ -12,6 +12,7 @@ const ViewForm = () => {
   useEffect(() => {
     GetForm(groupName).then((forms) => {
       setForm(forms[0].toJSON());
+      console.log(form);
     });
   }, []);
 
@@ -19,22 +20,23 @@ const ViewForm = () => {
     <div>
       <h2>Form: {groupName}</h2>
       <ol>
-        {form.data.map((award) => (
-          <div key={award.award}>
-            <span key={award.award}>
-              <li key={award.award}>
-                Award Title: {award.award}
-                <ol>
-                  {award.candidates.map((candidate) => (
-                    <li key={candidate.name}>
-                      {candidate.name} {candidate.votes}
-                    </li>
-                  ))}
-                </ol>
-              </li>
-            </span>
-          </div>
-        ))}
+        {form.data &&
+          form.data.map((award) => (
+            <div key={award.award}>
+              <span key={award.award}>
+                <li key={award.award}>
+                  Award Title: {award.award}
+                  <ol>
+                    {award.candidates.map((candidate) => (
+                      <li key={candidate.name}>
+                        {candidate.name} {candidate.votes}
+                      </li>
+                    ))}
+                  </ol>
+                </li>
+              </span>
+            </div>
+          ))}
       </ol>
     </div>
   );
