@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { GetForm } from "../../Services/ParseModels.js";
 import { useParams } from "react-router-dom";
 
+// views a form by a passed name parameter
 const ViewForm = () => {
   const params = useParams();
   const groupName = params["groupName"];
   const [form, setForm] = useState([]);
 
+  // get form to fisplay by name
   useEffect(() => {
     GetForm(groupName).then((forms) => {
       setForm(forms[0].toJSON());
@@ -15,7 +17,7 @@ const ViewForm = () => {
 
   return (
     <div>
-      <h2>Form name: {groupName}</h2>
+      <h2>Form: {groupName}</h2>
       <ol>
         {form.data.map((award) => (
           <div key={award.award}>
