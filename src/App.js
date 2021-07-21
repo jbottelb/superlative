@@ -9,6 +9,7 @@ import Vote from "./Components/Vote/VoteParent.js";
 import Voter from "./Components/Vote/voter.js";
 import Create from "./Components/CreateForm/create.js";
 import view from "./Components/view/view.js";
+import viewForm from "./Components/view/viewForm.js";
 import Parse from "parse";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProtectedRoute from "./Components/routing/protected";
@@ -38,6 +39,11 @@ const App = () => {
             <Route path="/Vote" exact component={Vote} />
             <Route path="/voter/:id" exact component={Voter} />
             <ProtectedRoute path="/view" exact component={view} />
+            <ProtectedRoute
+              path="/view/:groupName"
+              exact
+              component={viewForm}
+            />
             <ProtectedRoute path="/logout" exact component={Logout} />
           </Switch>
         </div>

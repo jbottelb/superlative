@@ -16,6 +16,11 @@ The only person who uses authentification is the person who creates the form. Th
 
 Both the component Tree diagram and UML are in the public folder
 
+Known Errors:
+
+- As long as you are signed in, you can acces any form
+  Fix: add a new protected route that makes sure you own the form
+
 ## DB:
 
 Table users {\
