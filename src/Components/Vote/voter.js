@@ -8,7 +8,7 @@ const Voter = () => {
   const params = useParams();
   const formId = params["id"];
   const [forms, setForms] = useState([]);
-  //const [name, setName] = useState();
+  const [name, setName] = useState();
 
   // this will hold all the current votes on a candidate
   const [options, setOptions] = useState([]);
@@ -40,7 +40,7 @@ const Voter = () => {
         );
       }
     });
-  }, []); // this adds a warning
+  }, [formId]); // this adds a warning
 
   // handle selection changes
   const onChangeHandler = (e) => {
