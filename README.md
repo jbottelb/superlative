@@ -6,13 +6,17 @@ Link to repo
 https://github.com/jbottelb/superlative
 
 Basically, one person creates a voting form.
-They give it a name, and an access password. They
+They give it a name to be accessed from. They
 also list a bunch of people that will be in the form.
-Then, each person uses the access password to get into the form,
-selects their name from the list of members then votes. Once they vote,
-they are recorded as having voted to prevent anyone from voting again.
+Then anyone can access the form and vote. The creator may then view the
+form and see who is winning.
 
-The only person who uses authentification is the person who creates the form. Then only they can view the form
+The only person who uses authentification is the person who creates the form. Then only they can view the form.
+
+Future work:
+
+- log devices to present voting multiple times
+- let creators do more with resultant data and print results
 
 Both the component Tree diagram and UML are in the public folder
 

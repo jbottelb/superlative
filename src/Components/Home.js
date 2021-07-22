@@ -1,6 +1,7 @@
 import React from "react";
 
 // Home sweet home
+// has a general instruction
 const Home = () => {
   return (
     <div>
@@ -8,7 +9,7 @@ const Home = () => {
       <p>
         The superlative voter allows users to create forms of superlatives, or
         paper plate awards. Then, they can share the group name to allow others
-        to to vote on who they think should get each award.
+        to vote on who they think should get each award.
       </p>
       <p>
         Try it out by creating an account and creating a form. Then, send

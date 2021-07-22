@@ -32,7 +32,7 @@ h3 {
 }
 
 /* 
-Left Nav Bar
+Left Nav Bar (also used in other components so not in nav)
 */
 .box {
   display: flex;

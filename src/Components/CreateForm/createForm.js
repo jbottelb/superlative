@@ -17,9 +17,7 @@ class CreateForm extends React.Component {
       Awards: ""
     };
   }
-  // double submitting causes a type error
   mySubmitHandler = (event) => {
-    // In the future, we will check if the groupname exists
     // first we need to format for the db
     event.preventDefault();
     console.log(this.state);

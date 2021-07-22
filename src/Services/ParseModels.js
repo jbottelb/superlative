@@ -8,6 +8,8 @@ import Parse from "parse";
 - Get a form by group Name
 - Get a Group ID from a Group name
 - Vote on a form with voting data
+- find all forms by a user
+- check if a groupname is used
 */
 
 // create a form
@@ -100,6 +102,7 @@ export async function vote(groupName, data) {
   }
 }
 
+// finds forms created by a user
 export async function getForms(email) {
   // find all the groups names of the email creator
   const From = Parse.Object.extend("From");

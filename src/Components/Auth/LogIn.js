@@ -4,6 +4,7 @@ import { login } from "../../Services/UserModels";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../../contexts/authContext";
 
+// log in function
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
