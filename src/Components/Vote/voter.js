@@ -40,7 +40,7 @@ const Voter = () => {
         );
       }
     });
-  }, []); // this adds a warning
+  }, [formId]); // this adds a warning
 
   // handle selection changes
   const onChangeHandler = (e) => {
