@@ -107,7 +107,7 @@ export async function getForms(email) {
   var names = [];
   // You can also query by using a parameter of an object
   query.equalTo("Creator", email);
-  const results = await query.find();
+  //const results = await query.find();
   try {
     const results = await query.find();
     for (const object of results) {

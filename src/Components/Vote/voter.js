@@ -7,7 +7,6 @@ import { GetForm, vote } from "../../Services/ParseModels.js";
 const Voter = () => {
   const params = useParams();
   const formId = params["id"];
-
   const [forms, setForms] = useState([]);
   //const [name, setName] = useState();
 

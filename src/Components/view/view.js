@@ -12,7 +12,7 @@ const View = () => {
     getForms(user).then((forms) => {
       setForms(forms);
     });
-  }, []);
+  }, [user]);
 
   return (
     <div>
